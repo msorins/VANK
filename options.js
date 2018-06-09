@@ -1,6 +1,6 @@
-const accessToken = 'EAAGgS18RNa0BAMN9PvucMdN6P0bWF4ZAKI3uNzD6s6UP0vVQqiSZAAI2d970FAfCY6uXZAzCgBw9vzVZBGrHBzVhB9ekve4Kn5Pfr6InQy645vmu2GJZBq07sHCyK52C9W5dZCe1J2c4Cm2zg20NHK6Q55ZAcQK8bYdocGqw4byePTGJeDZBkhkU';
+const accessToken = 'EAACTA4x8NWMBADKxdDT3yWCAy7klN6AmJPIXsdIdQrpIZCEF89bgmJIcx4afcpgUQTpZBOXOhao8uREogfseTFyQT9MCD08ANzLnQDX9C0dKTg7ZCuf5lQhQO0qz6KQZCDVOEQFwasiXLtZAsd9sSJnWxkfVOmLJaiXHPPe0rkQZDZD';
 const verifyToken = 'bingbangprintrecopacitokenmy';
-const appSecret = 'b60b030f476b72254cfb41151e571372';
+const appSecret = '70c77b22ee47f95a1ad1243607b01f0c';
 
 exports.accessToken = accessToken;
 exports.verifyToken = verifyToken;
