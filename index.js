@@ -56,4 +56,8 @@ bot.on('message', (payload, chat) => {
         .catch(console.error);
 });
 
+bot.on('attachment', (payload, chat) => {
+    console.log('An attachment was received!');
+});
+
 bot.start();
