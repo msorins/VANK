@@ -48,7 +48,6 @@ function operationSelector(chat, data) {
 // Users
 bot.on('message', (payload, chat) => {
     // Receive message from payload.sender.id
-
     wit.message(payload.message.text, JSON.stringify(payload.message.nlp))
         .then((data) => {
             // write an answer to the user

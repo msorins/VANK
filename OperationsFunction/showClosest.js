@@ -90,7 +90,20 @@ function showClosest(context, chat, entities) {
                     flag++;
                     console.log(flag);
                     if(flag >= body.results.length ) {
-                        chat.say("http://www.google.com/maps/place/" + loc);
+                        chat.sendTemplate({
+                            "template_type": "generic",
+                            "elements": [{
+                                "title": "BT found",
+                                "subtitle": "Distance is " + min.toString() +" meters",
+                                "image_url": "https://playtech.ro/wp-content/uploads/2015/11/google-maps-1170x658.jpg",
+                                "buttons": [{
+                                    "type": "web_url",
+                                    "url": "http://www.google.com/maps/place/" + loc,
+                                    "title": "Get directions"
+                                }],
+                            }]
+                        });
+
                         return;
                     }
 
