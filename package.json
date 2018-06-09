@@ -13,6 +13,7 @@
     "body-parser": "^1.18.3",
     "bootbot": "^1.0.15",
     "express": "^4.16.3",
-    "fb-messenger": "^1.2.0"
+    "fb-messenger": "^1.2.0",
+    "node-wit": "^5.0.0"
   }
 }

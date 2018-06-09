@@ -1,12 +1,21 @@
 const BootBot = require('bootbot'); //https://github.com/Charca/bootbot
 const express = require('express');
 const options = require('./options');
+const {Wit, log} = require('node-wit');
 
 const bot = new BootBot({
     accessToken: options.accessToken,
     verifyToken: options.verifyToken,
     appSecret: options.appSecret
 });
+
+
+
+const wit = new Wit({
+    accessToken: options.witToken,
+    logger: new log.Logger(log.DEBUG) // optional
+});
+
 
 // Sleep function
 function sleep(ms) {
@@ -16,11 +25,15 @@ function sleep(ms) {
 
 // Users
 bot.on('message', (payload, chat) => {
-    // Receive message
-    console.log(`Message from ${payload.sender.id}`);
+    // Receive message from payload.sender.id
+    bot.say( payload.sender.id, "Server received your message" );
 
-    // Add message
-    bot.say(payload.sender.id, "Hello:)");
+    wit.message(payload.message.text, {})
+        .then((data) => {
+            // got response from wit
+            bot.say( payload.sender.id, JSON.stringify(data) );
+        })
+        .catch(console.error);
 });
 
 bot.start();
