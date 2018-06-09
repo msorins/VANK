@@ -2,7 +2,7 @@ import os
 import json
 import urllib
 import argparse
-from VoiceIt import *
+from libs.VoiceIt import *
 from pydub import AudioSegment
 
 class VoiceChat():
@@ -55,21 +55,21 @@ class VoiceChat():
         print('User authentication')
         print('-----------------')
         auth_audio_path = self.auth_audio_process_path(auth_audio_url)
-        return self.Voice.authenticationByWavURL(self.usr, self.pwd, auth_audio_path, "en-US")
+        return self.Voice.authentication(self.usr, self.pwd, auth_audio_path, "en-US")
         
      
 if __name__ == '__main__':  
 
     parser = argparse.ArgumentParser(description='Pass on arguments for authentication.')
     parser.add_argument('audio_path', type=str, help='Path to the user authentication audio')
-    parser.add_argument('-enroll', type=bool, default='False', help='True - enrolls sessions in recordings/train, False - Default, authenticates model.')
-    #parser.add_argument('-credentials', type=str, default='credentials.json', help='Path to credentials.json') 
+    parser.add_argument('-enroll', type=bool, default=False, help='True - enrolls sessions in recordings/train, False - Default, authenticates model.')
+    parser.add_argument('-credentials', type=str, default='credentials.json', help='Path to credentials.json') 
 
     args = parser.parse_args()
 
-    voice = VoiceChat('credentials.json')
+    voice = VoiceChat(args.credentials)
 
-    if parser.parse_args(['enroll']):
+    if args.enroll:
         voice.create_templates()
 
     response = voice.authenticate(args.audio_path)
