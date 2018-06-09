@@ -23,7 +23,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function operationSelector(conext, data) {
+function operationSelector(chat, data) {
     // Get first & most probable entity
     let operationValue;
     if("intent_operation" in data["entities"]) {
@@ -34,14 +34,15 @@ function operationSelector(conext, data) {
         if("intent-type" in context) {
             operationValue = context["intent-type"];
         } else {
-            return "Intent operation not recognised";
+            chat.say("Intent operation not recognised");
+            return;
         }
     }
 
     let entities = data["entities"];
 
-    // Return the response ( a string with the message for the computed operation )
-    return operations[operationValue](context, entities);
+    // Compute the operation
+    operations[operationValue](context, chat, entities);
 }
 
 // Users
@@ -51,9 +52,13 @@ bot.on('message', (payload, chat) => {
     wit.message(payload.message.text, JSON.stringify(payload.message.nlp))
         .then((data) => {
             // write an answer to the user
-            chat.say( operationSelector(context, data) );
+            operationSelector(chat, data);
         })
         .catch(console.error);
+});
+
+bot.on('attachment', (payload, chat) => {
+    console.log('An attachment was received!');
 });
 
 bot.start();
