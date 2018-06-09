@@ -8,7 +8,7 @@ function addNewAccount(context, chat, entities) {
             // if all the parameters (currency in this case) are supplied & correct =>  operation finished
             delete context['intent-type'];
             delete context['param-needed-currency'];
-            chat.say( "A new account in " + currency.toUpperCase() + " was added" );
+            chat.say( "A new account in " + currency.toUpperCase() + " was added." );
             return;
         }
 
@@ -23,7 +23,7 @@ function addNewAccount(context, chat, entities) {
         // if the currency is not provided
         context['intent-type'] = "add_new_account";
         context['param-needed-currency'] = true;
-        chat.say( "I will create a new account for your right away, can you just provide a currency ?");
+        chat.say( "I will create a new account for your right away, can you just provide a currency?");
         return;
     }
 
