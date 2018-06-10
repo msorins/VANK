@@ -21,4 +21,10 @@ const operations = {
 
 };
 
+const security_map = {
+    "show_closest" : false,
+    "add_new_account": true
+};
+
 exports.operations = operations;
+exports.security_map = security_map;
