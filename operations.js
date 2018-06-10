@@ -23,7 +23,14 @@ const operations = {
 
 const security_map = {
     "show_closest" : false,
-    "add_new_account": true
+    "add_new_account": true,
+    "credit_options": false,
+    "block_card": true,
+    "card_renewal": true,
+    "show_promotions": true,
+    "account_info": true,
+    "spending_statistics": true,
+    "check_Transactions": true
 };
 
 exports.operations = operations;

@@ -52,12 +52,12 @@ function operationSelector(chat, data) {
       if(step == 1) {
         context['account_id'] = data["_text"];
         context['login_step'] = 2;
-        chat.say("Great! We sent you a phrase. Please record yourself and send me the audio message.", { typing: true });
+        chat.say("Great! Please record yourself speaking the secret phrase and send me the audio message.", { typing: true });
         // TODO(cosmin) send text message with the audio phrasee
       } else if(step == 2) {
         // here we should get an attachment, if we get here
         // we send instructions
-        chat.say("We sent you a phrase. Please record yourself and send me the audio message.", { typing: true });
+        chat.say("Please record yourself speaking the secret phrase and send me the audio message.", { typing: true });
       }
       return
     }
