@@ -1,5 +1,5 @@
 function cardRenewal(context, chat, entities) {
-    chat.say("To edit - renew Card");
+    chat.say("I will renew your card right away.");
 }
 
 exports.cardRenewal = cardRenewal;
