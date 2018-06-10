@@ -5,7 +5,10 @@ from hparams import hparams, hparams_debug_string
 from synthesizer import Synthesizer
 
 
-sentences = ['A perfect day really makes me happy.']
+sentences = [
+'Scientists at the CERN laboratory say they have discovered a new particle.',
+'A perfect day really makes me happy.'
+]
 
 
 def get_output_base_path(checkpoint_path):
