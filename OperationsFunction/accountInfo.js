@@ -1,5 +1,5 @@
 function accountInfo(context, chat, entities) {
-    chat.say("To edit - account info");
+    chat.say("Ask any questions about your accounts and I will help you");
 }
 
 exports.accountInfo = accountInfo;

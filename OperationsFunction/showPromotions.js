@@ -1,5 +1,5 @@
 function showPromotions(context, chat, entities) {
-    chat.say("To edit - show promotions");
+    chat.say("I will show you our latest promotions.");
 }
 
 exports.showPromotions = showPromotions;
