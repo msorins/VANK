@@ -6,13 +6,13 @@ function spendingStatistics(context, chat, entities) {
         if("from" in entities["datetime"][0] && "to" in entities["datetime"][0]) {
             var from = new Date(entities["datetime"][0]["from"]["value"]);
             var to = new Date(entities["datetime"][0]["to"]["value"]);
-
-            fromString = from.getDate() + "." + from.getMonth() + "." + from.getFullYear();
-            toString = to.getDate() + "." + to.getMonth() + "." + to.getFullYear();
         } else {
-            var a = 3;
+            var from = new Date(entities["datetime"][0]["value"]);
+            var to = new Date();
         }
 
+        fromString = from.getDate() + "." + from.getMonth() + "." + from.getFullYear();
+        toString = to.getDate() + "." + to.getMonth() + "." + to.getFullYear();
 
         chat.say("Showing you the spending statistics from " + fromString + " to " + toString );
     } else {
