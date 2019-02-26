@@ -4,13 +4,13 @@
 [![](http://img.youtube.com/vi/VHMttsEij1Y/0.jpg)](http://www.youtube.com/watch?v=VHMttsEij1Y "VANK | Demo")
 
 ## Screens
-![Demo Image ](https://github.com/msorins/VANK/blob/master/0.PNG?raw=true "Demo Image")
+![Demo Image ](https://github.com/msorins/VANK/blob/master/0.png?raw=true "Demo Image")
 
-![Demo Image ](https://github.com/msorins/VANK/blob/master/1.PNG?raw=true "Demo Image")
+![Demo Image ](https://github.com/msorins/VANK/blob/master/1.png?raw=true "Demo Image")
 
-![Demo Image ](https://github.com/msorins/VANK/blob/master/2.PNG?raw=true "Demo Image")
+![Demo Image ](https://github.com/msorins/VANK/blob/master/2.png?raw=true "Demo Image")
 
-![Demo Image ](https://github.com/msorins/VANK/blob/master/3.PNG?raw=true "Demo Image")
+![Demo Image ](https://github.com/msorins/VANK/blob/master/3.png?raw=true "Demo Image")
 
 
 # Idea
@@ -23,7 +23,7 @@ Staying in queues in order to talk to a representant of your bank can turn into 
 In order to extract the intent of messages received from user we use WitAi.
 It has the following configuration
 
-![Demo Image ](https://github.com/msorins/VANK/blob/master/4.PNG?raw=true "Demo Image")
+![Demo Image ](https://github.com/msorins/VANK/blob/master/4.png?raw=true "Demo Image")
 
 *intent_operation* is the core trait, as it encapsulates all the different operation that a user can do:
 * card_renewal
